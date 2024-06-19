@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Address Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: yellowgreen;
+            background-image: url("https://seeklogo.com/images/F/food-delivery-symbol-logo-37F3E64A34-seeklogo.com.png");
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Shipping Address</h1>
+        <p>Please enter your shipping details.</p>
+        <form id="shipping-form" onsubmit="return validateForm()">
+            <label for="firstname">First Name:</label>
+            <input type="text" id="firstname" name="firstname" required>
+            <span id="firstname-error" class="error-message"></span>
+            <label for="lastname">Last Name:</label>
+            <input type="text" id="lastname" name="lastname" required>
+            <span id="lastname-error" class="error-message"></span>
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+            <span id="address-error" class="error-message"></span>
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+            <span id="city-error" class="error-message"></span>
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required>
+            <span id="state-error" class="error-message"></span>
+            <label for="zip">ZIP Code:</label>
+            <input type="text" id="zip" name="zip" required>
+            <span id="zip-error" class="error-message"></span>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var firstName = document.getElementById("firstname").value;
+            var lastName = document.getElementById("lastname").value;
+            var address = document.getElementById("address").value;
+            var city = document.getElementById("city").value;
+            var state = document.getElementById("state").value;
+            var zip = document.getElementById("zip").value;
+
+            var isValid = true;
+
+            
+            if (firstName.trim() === "") {
+                document.getElementById("firstname-error").innerText = "Please enter your first name";
+                isValid = false;
+            } else {
+                document.getElementById("firstname-error").innerText = "";
+            }
+
+            
+            if (lastName.trim() === "") {
+                document.getElementById("lastname-error").innerText = "Please enter your last name";
+                isValid = false;
+            } else {
+                document.getElementById("lastname-error").innerText = "";
+            }
+
+            
+            if (address.trim() === "") {
+                document.getElementById("address-error").innerText = "Please enter your address";
+                isValid = false;
+            } else {
+                document.getElementById("address-error").innerText = "";
+            }
+
+            
+            if (city.trim() === "") {
+                document.getElementById("city-error").innerText = "Please enter your city";
+                isValid = false;
+            } else {
+                document.getElementById("city-error").innerText = "";
+            }
+
+            
+            if (state.trim() === "") {
+                document.getElementById("state-error").innerText = "Please enter your state";
+                isValid = false;
+            } else {
+                document.getElementById("state-error").innerText = "";
+            }
+
+            
+            if (zip.trim() === "" || isNaN(zip) || zip.length !== 5) {
+                document.getElementById("zip-error").innerText = "Please enter a valid ZIP code";
+                isValid = false;
+            } else {
+                document.getElementById("zip-error").innerText = "";
+            }
+
+            return isValid;
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,105 @@
+<html lan=en>
+<style>
+    body{
+        background-image:url('https://c8.alamy.com/comp/2BW75R9/toys-hand-drawn-seamless-pattern-toys-endless-sketch-drawing-texture-childish-background-part-of-set-2BW75R9.jpg');background-repeat:no-repeat;background-attachment:fixed;background-size:cover;background-repeat:no-repeat;background-attachment:fixed;background-size:cover;
+    }
+    .name{
+        color:black;
+        border-radius: 5px;
+    }
+    .p{
+        border-radius: 20px;
+        position:absolute;
+        left:650px;
+        bottom:290px;
+    }
+    .button1{
+        background-color:rgba(245, 245, 245, 0.726);
+        color:black;
+        border-radius: 10px;
+        border-color: rgb(71, 175, 209);
+        border-style: solid;
+        position:absolute;
+        padding: 5px;
+        left:730px;
+        bottom:220px;
+        text-decoration: none;
+
+    }
+    h{
+        color:black;
+        font-size:30px;
+        position:absolute;
+        left:700px;
+        bottom:570px;
+    } 
+    </style>
+    <body>
+        <div style="width:350px;height:460px;background-color:rgba(245, 245, 245, 0.726);position: absolute;left:570px;bottom:150px;border-radius: 30px;border-style: solid; border-color:rgb(71, 175, 209); padding:6px;"></div>
+        <h>Signup</h>
+        <div class="p">
+        <label class="name"><b>First Name:    </b></label>
+        <input type="text" name="enterName" placeholder="Firstname" size="10" required><br><br>
+        <label class="name"><b>Last Name:     </b></label>
+        <input type="text" class="name" name="LastName" placeholder="LastName" size="10" required><br><br>
+        <label class="name"><b>Phone no:      </b> </label>
+        <input type="text" class="phone" placeholder="phone no" size="10" required><br><br>
+        <label class="name"><b>Email id:      </b> </label>
+        <input type="text" class="email" placeholder="email-id" size="10" required><br><br>
+        <label class="name"><b>Password:      </b></label>
+        <input type="text" class="pass"  placeholder="password" size="10" required><br><br>
+        <label class="name" ><b>Gender:       </b></label>
+        <input type="text" class="name" placeholder="M/F" size="5" required><br><br> 
+        
+        <label class="name"><b>Country:        </b></label>
+        <input type="text" class="name" placeholder="Country" size="10" reqiured>
+        </div>
+        <a href="cat.html" class="button1" ><b>Sign in</b></a>
+    </body>
+
+    <script>
+        function validateForm() {
+            var firstName = document.getElementsByName("enterName")[0].value;
+            var lastName = document.getElementsByName("LastName")[0].value;
+            var phoneNumber = document.getElementsByClassName("phone")[2].value;
+            var email = document.getElementsByClassName("email")[3].value;
+            var password = document.getElementsByClassName("pass")[4].value;
+
+            var namePattern = /^[A-Za-z]+$/;
+            var phonePattern = /^[0-9]{10}$/;
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+            
+            if (!namePattern.test(firstName)) {
+                alert("First name should only contain alphabets");
+                return false;
+            }
+
+            
+            if (!namePattern.test(lastName)) {
+                alert("Last name should only contain alphabets");
+                return false;
+            }
+
+            
+            if (!phonePattern.test(phoneNumber)) {
+                alert("Phone number must be exactly 10 digits");
+                return false;
+            }
+
+            
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address");
+                return false;
+            }
+
+            
+            if (password.length < 8) {
+                alert("Password must be at least 8 characters long");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</html>
+
